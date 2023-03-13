@@ -1,0 +1,30 @@
+C:\Users\GHI\Documents\Visual Studio 2017\Projects\MakeCodeSpriteMaker\MakeCodeSpriteMaker\bin\Debug\MakeCodeSpriteMaker.exe.config
+C:\Users\GHI\Documents\Visual Studio 2017\Projects\MakeCodeSpriteMaker\MakeCodeSpriteMaker\bin\Debug\MakeCodeSpriteMaker.exe
+C:\Users\GHI\Documents\Visual Studio 2017\Projects\MakeCodeSpriteMaker\MakeCodeSpriteMaker\bin\Debug\MakeCodeSpriteMaker.pdb
+C:\Users\GHI\Documents\Visual Studio 2017\Projects\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csprojAssemblyReference.cache
+C:\Users\GHI\Documents\Visual Studio 2017\Projects\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.Form1.resources
+C:\Users\GHI\Documents\Visual Studio 2017\Projects\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.Properties.Resources.resources
+C:\Users\GHI\Documents\Visual Studio 2017\Projects\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csproj.GenerateResource.cache
+C:\Users\GHI\Documents\Visual Studio 2017\Projects\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csproj.CoreCompileInputs.cache
+C:\Users\GHI\Documents\Visual Studio 2017\Projects\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.exe
+C:\Users\GHI\Documents\Visual Studio 2017\Projects\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.pdb
+C:\Users\GHI\source\repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\bin\Debug\MakeCodeSpriteMaker.exe.config
+C:\Users\GHI\source\repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\bin\Debug\MakeCodeSpriteMaker.exe
+C:\Users\GHI\source\repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\bin\Debug\MakeCodeSpriteMaker.pdb
+C:\Users\GHI\source\repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csprojAssemblyReference.cache
+C:\Users\GHI\source\repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.Form1.resources
+C:\Users\GHI\source\repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.Properties.Resources.resources
+C:\Users\GHI\source\repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csproj.GenerateResource.cache
+C:\Users\GHI\source\repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.exe
+C:\Users\GHI\source\repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.pdb
+F:\Repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\bin\Debug\MakeCodeSpriteMaker.exe.config
+F:\Repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\bin\Debug\MakeCodeSpriteMaker.exe
+F:\Repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\bin\Debug\MakeCodeSpriteMaker.pdb
+F:\Repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csproj.AssemblyReference.cache
+F:\Repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csproj.SuggestedBindingRedirects.cache
+F:\Repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.Form1.resources
+F:\Repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.Properties.Resources.resources
+F:\Repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csproj.GenerateResource.cache
+F:\Repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csproj.CoreCompileInputs.cache
+F:\Repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.exe
+F:\Repos\MakeCodeSpriteMaker\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.pdb
