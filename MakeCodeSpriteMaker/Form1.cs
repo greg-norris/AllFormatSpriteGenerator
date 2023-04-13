@@ -239,6 +239,12 @@ namespace MakeCodeSpriteMaker {
 
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.SelectAll();
+            textBox1.Copy();
+        }
     }
     }
 
