@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,10 @@ namespace MakeCodeSpriteMaker {
             if (result == DialogResult.OK) // Test result.
             {
                 string file = openFileDialog1.FileName;
-               
 
+                FileInfo fi = new FileInfo(openFileDialog1.FileName);
+
+                label1.Text = fi.Name;
             }
             Console.WriteLine(result); // <-- For debugging use.
        
@@ -171,9 +174,7 @@ namespace MakeCodeSpriteMaker {
         {
 
             Bitmap img = new Bitmap(openFileDialog1.FileName);
-
-
-
+           
 
             int[] index = {
                 0,31,32,63,64,95,96,127,128,159,160,191,192,223,224,255,
