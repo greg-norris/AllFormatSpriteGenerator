@@ -39,3 +39,14 @@ D:\AllFormatSpriteGenerator\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.cs
 D:\AllFormatSpriteGenerator\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csproj.CoreCompileInputs.cache
 D:\AllFormatSpriteGenerator\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.exe
 D:\AllFormatSpriteGenerator\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.pdb
+D:\Repos\AllFormatSpriteGenerator\MakeCodeSpriteMaker\bin\Debug\MakeCodeSpriteMaker.exe.config
+D:\Repos\AllFormatSpriteGenerator\MakeCodeSpriteMaker\bin\Debug\MakeCodeSpriteMaker.exe
+D:\Repos\AllFormatSpriteGenerator\MakeCodeSpriteMaker\bin\Debug\MakeCodeSpriteMaker.pdb
+D:\Repos\AllFormatSpriteGenerator\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csproj.AssemblyReference.cache
+D:\Repos\AllFormatSpriteGenerator\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csproj.SuggestedBindingRedirects.cache
+D:\Repos\AllFormatSpriteGenerator\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.Form1.resources
+D:\Repos\AllFormatSpriteGenerator\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.Properties.Resources.resources
+D:\Repos\AllFormatSpriteGenerator\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csproj.GenerateResource.cache
+D:\Repos\AllFormatSpriteGenerator\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.csproj.CoreCompileInputs.cache
+D:\Repos\AllFormatSpriteGenerator\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.exe
+D:\Repos\AllFormatSpriteGenerator\MakeCodeSpriteMaker\obj\Debug\MakeCodeSpriteMaker.pdb
