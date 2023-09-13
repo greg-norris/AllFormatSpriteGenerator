@@ -254,9 +254,11 @@ namespace MakeCodeSpriteMaker {
 
             sb.Append("Dim i[2+(" + img.Width +"*"+ img.Height+")] = ["+ img.Width + ","+img.Height+",");
             sb.AppendLine();
+            var x = 0;
 
             for (int j = 0; j < img.Height; j++)
             {
+                
                 for (int i = 0; i < img.Width; i++)
                 {
                     Color pixel = img.GetPixel(i, j);      
@@ -267,14 +269,26 @@ namespace MakeCodeSpriteMaker {
 
                     if (rValue == "0")
                     {
-                        sb.Append("0,");
+                        sb.Append("0");
                     }
                     else
                     {
-                        sb.Append("1,");
+                        sb.Append("1");
                     }
+                    if (x < img.Height*img.Width-1)
+                    {
+                        sb.Append(",");
+                        Console.WriteLine(x);
+                    }
+                    else
+                    {
+                        sb.Append("]");
+                        Console.WriteLine(x);
+                    }
+                    x++;
                 }
                 sb.AppendLine();
+                
             }
             sb.Append("");
             sb.AppendLine();

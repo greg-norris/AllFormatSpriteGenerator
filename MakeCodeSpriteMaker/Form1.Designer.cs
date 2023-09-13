@@ -141,7 +141,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(229, 46);
             this.button6.TabIndex = 12;
-            this.button6.Text = "DUE Sprites";
+            this.button6.Text = "Pulse Screen";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
