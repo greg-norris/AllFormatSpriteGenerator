@@ -53,7 +53,7 @@ namespace MakeCodeSpriteMaker {
 
             sb.Append("NeoClear()");
             sb.AppendLine();
-            sb.Append("NeoShow(50)");
+            sb.Append("NeoShow(0,50)");
             sb.AppendLine();
 
             char[] myImage = new char[img.Height];
@@ -74,7 +74,7 @@ namespace MakeCodeSpriteMaker {
                 }
                 sb.AppendLine();
             }
-            sb.Append("NeoShow(50)");
+            sb.Append("NeoShow(0,50)");
             sb.AppendLine();
 
             textBox1.Text = sb.ToString();
@@ -130,7 +130,7 @@ namespace MakeCodeSpriteMaker {
 
             sb.Append("NeoClear()"); 
             sb.AppendLine();
-            sb.Append("NeoShow(256)");
+            sb.Append("NeoShow(0,256)");
             sb.AppendLine();
 
             char[] myImage = new char[img.Height];
@@ -153,7 +153,7 @@ namespace MakeCodeSpriteMaker {
                 }
                 sb.AppendLine();
             }
-            sb.Append("NeoShow(256)");
+            sb.Append("NeoShow(0,256)");
             sb.AppendLine();
 
             textBox1.Text = sb.ToString();
@@ -201,7 +201,7 @@ namespace MakeCodeSpriteMaker {
 
             sb.Append("NeoClear()");
             sb.AppendLine();
-            sb.Append("NeoShow(256)");
+            sb.Append("NeoShow(0,256)");
             sb.AppendLine();
 
             char[] myImage = new char[img.Height];
@@ -224,7 +224,7 @@ namespace MakeCodeSpriteMaker {
                 }
                 sb.AppendLine();
             }
-            sb.Append("NeoShow(256)");
+            sb.Append("NeoShow(0,256)");
             sb.AppendLine();
 
             textBox1.Text = sb.ToString();
@@ -337,7 +337,7 @@ namespace MakeCodeSpriteMaker {
 
             sb.Append("NeoClear()");
             sb.AppendLine();
-            sb.Append("NeoShow(256)");
+            sb.Append("NeoShow(0,256)");
             sb.AppendLine();
 
             char[] myImage = new char[img.Height];
@@ -360,7 +360,7 @@ namespace MakeCodeSpriteMaker {
                 }
                 sb.AppendLine();
             }
-            sb.Append("NeoShow(256)");
+            sb.Append("NeoShow(0,256)");
             sb.AppendLine();
 
             textBox1.Text = sb.ToString();
