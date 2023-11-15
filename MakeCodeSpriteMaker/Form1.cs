@@ -4,22 +4,20 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace MakeCodeSpriteMaker {
-
-        public partial class Form1 : Form {
-            public Form1() {
-                InitializeComponent();
+namespace MakeCodeSpriteMaker{
+    public partial class Form1 : Form{
+        public Form1(){
+            InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e) {
+        private void Form1_Load(object sender, EventArgs e){
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void button1_Click(object sender, EventArgs e){
 
             // Show the dialog and get result.
             DialogResult result = openFileDialog1.ShowDialog();
-            if (result == DialogResult.OK) // Test result.
-            {
+            if (result == DialogResult.OK) {
                 string file = openFileDialog1.FileName;
 
                 FileInfo fi = new FileInfo(openFileDialog1.FileName);
@@ -27,10 +25,9 @@ namespace MakeCodeSpriteMaker {
                 label1.Text = fi.Name;
             }
             Console.WriteLine(result); // <-- For debugging use.
-       
         }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e) {
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e){
             Bitmap img = new Bitmap(openFileDialog1.FileName);
 
             Image thumb = img.GetThumbnailImage(120, 120, () => false, IntPtr.Zero);
@@ -39,11 +36,11 @@ namespace MakeCodeSpriteMaker {
         }
 
         //PIXEL PONG
-        private void button2_Click(object sender, EventArgs e) {
+        private void button2_Click(object sender, EventArgs e){
             Bitmap img = new Bitmap(openFileDialog1.FileName);
 
-            int[] index = { 0,1,2,3,4,5,6,13,12,11,10,9,8,7,14,15,16,17,18,19,20,27,26,25,24,23,22,21,28,29,30,31,32,33,34,41,40,39,38,37,36,35,42,43,44,45,46,47,48};
-      
+            int[] index = { 0, 1, 2, 3, 4, 5, 6, 13, 12, 11, 10, 9, 8, 7, 14, 15, 16, 17, 18, 19, 20, 27, 26, 25, 24, 23, 22, 21, 28, 29, 30, 31, 32, 33, 34, 41, 40, 39, 38, 37, 36, 35, 42, 43, 44, 45, 46, 47, 48 };
+
             var sb = new System.Text.StringBuilder();
 
             sb.Append("NeoClear()");
@@ -53,15 +50,14 @@ namespace MakeCodeSpriteMaker {
 
             char[] myImage = new char[img.Height];
             var x = 0;
-            for (int j = 0; j < img.Height; j++) {
-                for (int i = 0; i < img.Width; i++) {
+            for (int j = 0; j < img.Height; j++){
+                for (int i = 0; i < img.Width; i++){
                     Color pixel = img.GetPixel(i, j);
                     // Console.WriteLine(pixel.ToString());
                     var rValue = pixel.R.ToString();
                     var gValue = pixel.G.ToString();
                     var bValue = pixel.B.ToString();
-
-                    sb.Append("NeoSet("+index[x]+","+gValue+","+rValue+","+bValue+")");
+                    sb.Append("NeoSet(" + index[x] + "," + gValue + "," + rValue + "," + bValue + ")");
                     x++;
                     sb.AppendLine();
                 }
@@ -69,39 +65,14 @@ namespace MakeCodeSpriteMaker {
             }
             sb.Append("NeoShow(0,50)");
             sb.AppendLine();
-
             textBox1.Text = sb.ToString();
             Console.WriteLine(sb);
         }
 
-       
         //32x8 NeoPixel Panel
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //var array = new int[256];
-            //var n = 0;
-            //var row = 16;
-            //var column = 16; for (int y = 0; y < row; y++)
-            //{
-            //    var i = n;
-            //    for (int x = 0; x < column; x++)
-            //    {
-            //        if (x % 2 == 0)
-            //        {
-            //            array[y * column + x] = i;
-            //        }
-            //        else
-            //        {
-            //            array[y * column + x] = i + (column / 2 - 1) - n * 2;
-            //            i += column / 2;
-            //        }
-            //        Console.Write(", " + array[y * column + x]);
-            //    }
-            //    n++;
-            //    Console.WriteLine("");
-            //}
-
-            Bitmap img = new Bitmap(openFileDialog1.FileName);        
+        private void button3_Click(object sender, EventArgs e){
+            
+            Bitmap img = new Bitmap(openFileDialog1.FileName);
 
             int[] index = {
                 0, 15,16,31,32,47,48,63,64,79,80,95,96,111,112,127,128,143,144,159,160,175,176,191,192,207,208,223,224,239,240,255,
@@ -117,24 +88,20 @@ namespace MakeCodeSpriteMaker {
 
             var sb = new System.Text.StringBuilder();
 
-            sb.Append("NeoClear()"); 
+            sb.Append("NeoClear()");
             sb.AppendLine();
             sb.Append("NeoShow(0,256)");
             sb.AppendLine();
 
             char[] myImage = new char[img.Height];
             var x = 0;
-            for (int j = 0; j < img.Height; j++)
-            {
-                for (int i = 0; i < img.Width; i++)
-                {
+            for (int j = 0; j < img.Height; j++){
+                for (int i = 0; i < img.Width; i++){
                     Color pixel = img.GetPixel(i, j);
-                    // Console.WriteLine(pixel.ToString());
 
-
-                    var rValue =  pixel.R.ToString();
-                    var gValue =  pixel.G.ToString();
-                    var bValue =  pixel.B.ToString();
+                    var rValue = pixel.R.ToString();
+                    var gValue = pixel.G.ToString();
+                    var bValue = pixel.B.ToString();
 
                     sb.Append("NeoSet(" + index[x] + "," + rValue + "," + gValue + "," + bValue + ")");
                     x++;
@@ -149,10 +116,9 @@ namespace MakeCodeSpriteMaker {
             Console.WriteLine(sb);
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
+        private void button4_Click(object sender, EventArgs e){
             Bitmap img = new Bitmap(openFileDialog1.FileName);
-           
+
             int[] index = {
                 0,31,32,63,64,95,96,127,128,159,160,191,192,223,224,255,
                 1,30,33,62,65,94,97,126,129,158,161,190,193,222,225,254,
@@ -204,292 +170,12 @@ namespace MakeCodeSpriteMaker {
         }
 
         //Copy Code to Clipboard
-        private void button5_Click(object sender, EventArgs e)
-        {
+        private void button5_Click(object sender, EventArgs e){
             textBox1.SelectAll();
             textBox1.Copy();
         }
 
-        //Pulse Screen
-        private void button6_Click(object sender, EventArgs e)
-        {         
-            Bitmap img = new Bitmap(openFileDialog1.FileName);
-            var sb = new System.Text.StringBuilder();
-
-            sb.Append("Dim i[2+(" + img.Width +"*"+ img.Height+")] = ["+ img.Width + ","+img.Height+",");
-            sb.AppendLine();
-            var x = 0;
-
-            for (int j = 0; j < img.Height; j++)
-            {
-                
-                for (int i = 0; i < img.Width; i++)
-                {
-                    Color pixel = img.GetPixel(i, j);      
-
-                    var rValue = pixel.R.ToString();
-                    var gValue = pixel.G.ToString();
-                    var bValue = pixel.B.ToString();
-
-                    if (rValue == "0")
-                    {
-                        sb.Append("0");
-                    }
-                    else
-                    {
-                        sb.Append("1");
-                    }
-                    if (x < img.Height*img.Width-1)
-                    {
-                        sb.Append(",");
-                        Console.WriteLine(x);
-                    }
-                    else
-                    {
-                        sb.Append("]");
-                        Console.WriteLine(x);
-                    }
-                    x++;
-                }
-                sb.AppendLine();
-                
-            }
-            sb.Append("");
-            sb.AppendLine();
-            sb.Append("LcdClear(0)");
-            sb.AppendLine();
-            sb.Append("LcdImg(i,0,0,0)");
-            sb.AppendLine();
-            sb.Append("LcdShow()");
-
-            textBox1.Text = sb.ToString();
-            Console.WriteLine(sb);
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Bitmap img = new Bitmap(openFileDialog1.FileName);
-            var sb = new System.Text.StringBuilder();
-
-            sb.Append("Dim i[2+(" + img.Width + "*" + img.Height + ")] = [" + img.Width + "," + img.Height + ",");
-            sb.AppendLine();
-            var x = 0;
-
-            for (int j = 0; j < img.Height; j++)
-            {
-                for (int i = 0; i < img.Width; i++)
-                {
-                    Color pixel = img.GetPixel(i, j);
-                    var rValue = pixel.R.ToString();
-                    var gValue = pixel.G.ToString();
-                    var bValue = pixel.B.ToString();
-
-                    if (rValue == "0")
-                    {
-                        sb.Append("0");
-                    }
-                    else
-                    {
-                        sb.Append("1");
-                    }
-                    if (x < img.Height * img.Width - 1)
-                    {
-                        sb.Append(",");
-                        Console.WriteLine(x);
-                    }
-                    else
-                    {
-                        sb.Append("]");
-                        Console.WriteLine(x);
-                    }
-                    x++;
-                }
-                sb.AppendLine();
-
-            }
-            sb.Append("");
-            sb.AppendLine();
-            sb.Append("LcdClear(0)");
-            sb.AppendLine();
-
-            sb.Append("LcdImgS(i,0,0,1,1,0)");
-
-            sb.AppendLine();
-            sb.Append("LcdShow()");
-
-            textBox1.Text = sb.ToString();
-            Console.WriteLine(sb);
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Bitmap img = new Bitmap(openFileDialog1.FileName);
-            var sb = new System.Text.StringBuilder();
-
-            sb.Append("Dim i[2+(" + img.Width + "*" + img.Height + ")] = [" + img.Width + "," + img.Height + ",");
-            sb.AppendLine();
-            var x = 0;
-
-            for (int j = 0; j < img.Height; j++)
-            {
-                for (int i = 0; i < img.Width; i++)
-                {
-                    Color pixel = img.GetPixel(i, j);
-                    var rValue = pixel.R.ToString();
-                    var gValue = pixel.G.ToString();
-                    var bValue = pixel.B.ToString();
-
-                    if (rValue == "0")
-                    {
-                        sb.Append("0");
-                    }
-                    else
-                    {
-                        sb.Append("1");
-                    }
-                    if (x < img.Height * img.Width - 1)
-                    {
-                        sb.Append(",");
-                        Console.WriteLine(x);
-                    }
-                    else
-                    {
-                        sb.Append("]");
-                        Console.WriteLine(x);
-                    }
-                    x++;
-                }
-                sb.AppendLine();
-
-            }
-            sb.Append("");
-            sb.AppendLine();
-            sb.Append("LcdClear(0)");
-            sb.AppendLine();
-
-            sb.Append("LcdImgS(i,0,0,2,2,0)");
-
-            sb.AppendLine();
-            sb.Append("LcdShow()");
-
-            textBox1.Text = sb.ToString();
-            Console.WriteLine(sb);
-        }
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Bitmap img = new Bitmap(openFileDialog1.FileName);
-            var sb = new System.Text.StringBuilder();
-
-            sb.Append("Dim i[2+(" + img.Width + "*" + img.Height + ")] = [" + img.Width + "," + img.Height + ",");
-            sb.AppendLine();
-            var x = 0;
-
-            for (int j = 0; j < img.Height; j++)
-            {
-
-                for (int i = 0; i < img.Width; i++)
-                {
-                    Color pixel = img.GetPixel(i, j);
-
-                 
-
-                    var rValue = pixel.R.ToString();
-                    var gValue = pixel.G.ToString();
-                    var bValue = pixel.B.ToString();
-
-                    if (rValue == "0")
-                    {
-                        sb.Append("0");
-                    }
-                    else
-                    {
-                        sb.Append("1");
-                    }
-                    if (x < img.Height * img.Width - 1)
-                    {
-                        sb.Append(",");
-                        Console.WriteLine(x);
-                    }
-                    else
-                    {
-                        sb.Append("]");
-                        Console.WriteLine(x);
-                    }
-                    x++;
-                }
-                sb.AppendLine();
-
-            }
-            sb.Append("");
-            sb.AppendLine();
-            sb.Append("LcdClear(0)");
-            sb.AppendLine();
-
-            sb.Append("LcdImgS(i,0,0,3,3,0)");
-
-            sb.AppendLine();
-            sb.Append("LcdShow()");
-
-            textBox1.Text = sb.ToString();
-            Console.WriteLine(sb);
-        }
-        private void button10_Click(object sender, EventArgs e)
-        {
-            Bitmap img = new Bitmap(openFileDialog1.FileName);
-            var sb = new System.Text.StringBuilder();
-
-            sb.Append("Dim i[2+(" + img.Width + "*" + img.Height + ")] = [" + img.Width + "," + img.Height + ",");
-            sb.AppendLine();
-            var x = 0;
-
-            for (int j = 0; j < img.Height; j++)
-            {
-
-                for (int i = 0; i < img.Width; i++)
-                {
-                    Color pixel = img.GetPixel(i, j);
-
-                    var rValue = pixel.R.ToString();
-                    var gValue = pixel.G.ToString();
-                    var bValue = pixel.B.ToString();
-
-                    if (rValue == "0")
-                    {
-                        sb.Append("0");
-                    }
-                    else
-                    {
-                        sb.Append("1");
-                    }
-                    if (x < img.Height * img.Width - 1)
-                    {
-                        sb.Append(",");
-                        Console.WriteLine(x);
-                    }
-                    else
-                    {
-                        sb.Append("]");
-                        Console.WriteLine(x);
-                    }
-                    x++;
-                }
-                sb.AppendLine();
-
-            }
-            sb.Append("");
-            sb.AppendLine();
-            sb.Append("LcdClear(0)");
-            sb.AppendLine();
-
-            sb.Append("LcdImgS(i,0,0,4,4,0)");
-
-            sb.AppendLine();
-            sb.Append("LcdShow()");
-
-            textBox1.Text = sb.ToString();
-            Console.WriteLine(sb);
-        }
-
+        
         private void button11_Click(object sender, EventArgs e)
         {
             Bitmap img = new Bitmap(openFileDialog1.FileName);
@@ -510,54 +196,7 @@ namespace MakeCodeSpriteMaker {
                     var gValue = pixel.G.ToString();
                     var bValue = pixel.B.ToString();
 
-                    //White
-                    if (rValue == "255" && gValue == "255" && bValue == "255")
-                        sb.Append("1");
-
-                    //Black
-                    if (rValue == "0" && gValue == "0" && bValue == "0")
-                        sb.Append("0");
-
-                    //Gray
-                    if (rValue == "70" && gValue == "70" && bValue == "70")
-                        sb.Append("0x464646");
-
-                    //Red
-                    if (rValue =="255" && gValue =="0" &&  bValue =="0")
-                        sb.Append("0xFF0000");
-
-                    //Yellow
-                    if (rValue == "255" && gValue == "255" && bValue == "0")
-                        sb.Append("0x00FF00");
-
-                    //Green
-                    if (rValue == "0" && gValue == "255" && bValue == "0")
-                        sb.Append("0xFFFF00");
-
-                    //Blue
-                    if (rValue == "0" && gValue == "0" && bValue == "255")
-                        sb.Append("0x0000FF");
-
-                    //Green
-                    if (rValue == "0" && gValue == "255" && bValue == "0")
-                        sb.Append("0xFFFF00");
-
-                    //Green
-                    if (rValue == "0" && gValue == "255" && bValue == "0")
-                        sb.Append("0xFFFF00");
-
-                    //Magenta
-                    if (rValue == "255" && gValue == "0" && bValue == "255")
-                        sb.Append("0xFF0FF");
-
-                    //Light Skin
-                    if (rValue == "253" && gValue == "198" && bValue == "137")
-                        sb.Append("0xFDC669");
-
-                    //Brown
-                    if (rValue == "117" && gValue == "76" && bValue == "36")
-                        sb.Append("0x754C24");
-
+                    sb.Append(getHexColor(rValue, gValue, bValue));
 
                     if (x < img.Height * img.Width - 1)
                     {
@@ -579,7 +218,7 @@ namespace MakeCodeSpriteMaker {
             sb.Append("LcdClear(0)");
             sb.AppendLine();
 
-            sb.Append("LcdImgS(i,0,0,1,1,0)");
+            sb.Append("LcdImgS(i,0,0,"+ scaleSelect.GetItemText(scaleSelect.SelectedItem)+","+ scaleSelect.GetItemText(scaleSelect.SelectedItem) + ",0)");
 
             sb.AppendLine();
             sb.Append("LcdShow()");
@@ -587,299 +226,45 @@ namespace MakeCodeSpriteMaker {
             textBox1.Text = sb.ToString();
             Console.WriteLine(sb);
         }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            Bitmap img = new Bitmap(openFileDialog1.FileName);
-            var sb = new System.Text.StringBuilder();
-
-            sb.Append("Dim i[2+(" + img.Width + "*" + img.Height + ")] = [" + img.Width + "," + img.Height + ",");
-            sb.AppendLine();
-            var x = 0;
-
-            for (int j = 0; j < img.Height; j++)
-            {
-
-                for (int i = 0; i < img.Width; i++)
-                {
-                    Color pixel = img.GetPixel(i, j);
-
-                    var rValue = pixel.R.ToString();
-                    var gValue = pixel.G.ToString();
-                    var bValue = pixel.B.ToString();
-
-                    //White
-                    if (rValue == "255" && gValue == "255" && bValue == "255")
-                        sb.Append("1");
-
-                    //Black
-                    if (rValue == "0" && gValue == "0" && bValue == "0")
-                        sb.Append("0");
-
-                    //Gray
-                    if (rValue == "70" && gValue == "70" && bValue == "70")
-                        sb.Append("0x464646");
-
-                    //Red
-                    if (rValue == "255" && gValue == "0" && bValue == "0")
-                        sb.Append("0xFF0000");
-
-                    //Yellow
-                    if (rValue == "255" && gValue == "255" && bValue == "0")
-                        sb.Append("0x00FF00");
-
-                    //Green
-                    if (rValue == "0" && gValue == "255" && bValue == "0")
-                        sb.Append("0xFFFF00");
-
-                    //Blue
-                    if (rValue == "0" && gValue == "0" && bValue == "255")
-                        sb.Append("0x0000FF");
-
-                    //Green
-                    if (rValue == "0" && gValue == "255" && bValue == "0")
-                        sb.Append("0xFFFF00");
-
-                    //Green
-                    if (rValue == "0" && gValue == "255" && bValue == "0")
-                        sb.Append("0xFFFF00");
-
-                    //Magenta
-                    if (rValue == "255" && gValue == "0" && bValue == "255")
-                        sb.Append("0xFF0FF");
-
-                    //Light Skin
-                    if (rValue == "253" && gValue == "198" && bValue == "137")
-                        sb.Append("0xFDC669");
-
-                    //Brown
-                    if (rValue == "117" && gValue == "76" && bValue == "36")
-                        sb.Append("0x754C24");
-
-
-                    if (x < img.Height * img.Width - 1)
-                    {
-                        sb.Append(",");
-                        Console.WriteLine(x);
-                    }
-                    else
-                    {
-                        sb.Append("]");
-                        Console.WriteLine(x);
-                    }
-                    x++;
-                }
-                sb.AppendLine();
-
-            }
-            sb.Append("");
-            sb.AppendLine();
-            sb.Append("LcdClear(0)");
-            sb.AppendLine();
-
-            sb.Append("LcdImgS(i,0,0,2,2,0)");
-
-            sb.AppendLine();
-            sb.Append("LcdShow()");
-
-            textBox1.Text = sb.ToString();
-            Console.WriteLine(sb);
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            Bitmap img = new Bitmap(openFileDialog1.FileName);
-            var sb = new System.Text.StringBuilder();
-
-            sb.Append("Dim i[2+(" + img.Width + "*" + img.Height + ")] = [" + img.Width + "," + img.Height + ",");
-            sb.AppendLine();
-            var x = 0;
-
-            for (int j = 0; j < img.Height; j++)
-            {
-
-                for (int i = 0; i < img.Width; i++)
-                {
-                    Color pixel = img.GetPixel(i, j);
-
-                    var rValue = pixel.R.ToString();
-                    var gValue = pixel.G.ToString();
-                    var bValue = pixel.B.ToString();
-
-                    //White
-                    if (rValue == "255" && gValue == "255" && bValue == "255")
-                        sb.Append("1");
-
-                    //Black
-                    if (rValue == "0" && gValue == "0" && bValue == "0")
-                        sb.Append("0");
-
-                    //Gray
-                    if (rValue == "70" && gValue == "70" && bValue == "70")
-                        sb.Append("0x464646");
-
-                    //Red
-                    if (rValue == "255" && gValue == "0" && bValue == "0")
-                        sb.Append("0xFF0000");
-
-                    //Yellow
-                    if (rValue == "255" && gValue == "255" && bValue == "0")
-                        sb.Append("0x00FF00");
-
-                    //Green
-                    if (rValue == "0" && gValue == "255" && bValue == "0")
-                        sb.Append("0xFFFF00");
-
-                    //Blue
-                    if (rValue == "0" && gValue == "0" && bValue == "255")
-                        sb.Append("0x0000FF");
-
-                    //Green
-                    if (rValue == "0" && gValue == "255" && bValue == "0")
-                        sb.Append("0xFFFF00");
-
-                    //Green
-                    if (rValue == "0" && gValue == "255" && bValue == "0")
-                        sb.Append("0xFFFF00");
-
-                    //Magenta
-                    if (rValue == "255" && gValue == "0" && bValue == "255")
-                        sb.Append("0xFF0FF");
-
-                    //Light Skin
-                    if (rValue == "253" && gValue == "198" && bValue == "137")
-                        sb.Append("0xFDC669");
-
-                    //Brown
-                    if (rValue == "117" && gValue == "76" && bValue == "36")
-                        sb.Append("0x754C24");
-
-
-                    if (x < img.Height * img.Width - 1)
-                    {
-                        sb.Append(",");
-                        Console.WriteLine(x);
-                    }
-                    else
-                    {
-                        sb.Append("]");
-                        Console.WriteLine(x);
-                    }
-                    x++;
-                }
-                sb.AppendLine();
-
-            }
-            sb.Append("");
-            sb.AppendLine();
-            sb.Append("LcdClear(0)");
-            sb.AppendLine();
-
-            sb.Append("LcdImgS(i,0,0,3,3,0)");
-
-            sb.AppendLine();
-            sb.Append("LcdShow()");
-
-            textBox1.Text = sb.ToString();
-            Console.WriteLine(sb);
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            Bitmap img = new Bitmap(openFileDialog1.FileName);
-            var sb = new System.Text.StringBuilder();
-
-            sb.Append("Dim i[2+(" + img.Width + "*" + img.Height + ")] = [" + img.Width + "," + img.Height + ",");
-            sb.AppendLine();
-            var x = 0;
-
-            for (int j = 0; j < img.Height; j++)
-            {
-
-                for (int i = 0; i < img.Width; i++)
-                {
-                    Color pixel = img.GetPixel(i, j);
-
-                    var rValue = pixel.R.ToString();
-                    var gValue = pixel.G.ToString();
-                    var bValue = pixel.B.ToString();
-
-                    //White
-                    if (rValue == "255" && gValue == "255" && bValue == "255")
-                        sb.Append("1");
-
-                    //Black
-                    if (rValue == "0" && gValue == "0" && bValue == "0")
-                        sb.Append("0");
-
-                    //Gray
-                    if (rValue == "70" && gValue == "70" && bValue == "70")
-                        sb.Append("0x464646");
-
-                    //Red
-                    if (rValue == "255" && gValue == "0" && bValue == "0")
-                        sb.Append("0xFF0000");
-
-                    //Yellow
-                    if (rValue == "255" && gValue == "255" && bValue == "0")
-                        sb.Append("0x00FF00");
-
-                    //Green
-                    if (rValue == "0" && gValue == "255" && bValue == "0")
-                        sb.Append("0xFFFF00");
-
-                    //Blue
-                    if (rValue == "0" && gValue == "0" && bValue == "255")
-                        sb.Append("0x0000FF");
-
-                    //Green
-                    if (rValue == "0" && gValue == "255" && bValue == "0")
-                        sb.Append("0xFFFF00");
-
-                    //Green
-                    if (rValue == "0" && gValue == "255" && bValue == "0")
-                        sb.Append("0xFFFF00");
-
-                    //Magenta
-                    if (rValue == "255" && gValue == "0" && bValue == "255")
-                        sb.Append("0xFF0FF");
-
-                    //Light Skin
-                    if (rValue == "253" && gValue == "198" && bValue == "137")
-                        sb.Append("0xFDC669");
-
-                    //Brown
-                    if (rValue == "117" && gValue == "76" && bValue == "36")
-                        sb.Append("0x754C24");
-
-
-                    if (x < img.Height * img.Width - 1)
-                    {
-                        sb.Append(",");
-                        Console.WriteLine(x);
-                    }
-                    else
-                    {
-                        sb.Append("]");
-                        Console.WriteLine(x);
-                    }
-                    x++;
-                }
-                sb.AppendLine();
-
-            }
-            sb.Append("");
-            sb.AppendLine();
-            sb.Append("LcdClear(0)");
-            sb.AppendLine();
-
-            sb.Append("LcdImgS(i,0,0,4,4,0)");
-
-            sb.AppendLine();
-            sb.Append("LcdShow()");
-
-            textBox1.Text = sb.ToString();
-            Console.WriteLine(sb);
+       
+        private string getHexColor(string rValue, string gValue, string bValue){
+            var hexColor = "";
+
+            //White
+            if (rValue == "255" && gValue == "255" && bValue == "255")
+                return "1";
+            //Black
+            if (rValue == "0" && gValue == "0" && bValue == "0")
+                return "0";
+            //Gray
+            if (rValue == "70" && gValue == "70" && bValue == "70")
+                return "0x464646";
+            //Red
+            if (rValue == "255" && gValue == "0" && bValue == "0")
+                return "0xFF0000";
+            //Yellow
+            if (rValue == "255" && gValue == "255" && bValue == "0")
+                return "0x00FF00";
+            //Green
+            if (rValue == "0" && gValue == "255" && bValue == "0")
+                return "0xFFFF00";
+            //Blue
+            if (rValue == "0" && gValue == "0" && bValue == "255")
+                return "0x0000FF";
+            //Green
+            if (rValue == "0" && gValue == "255" && bValue == "0")
+                return "0xFFFF00";
+            //Magenta
+            if (rValue == "255" && gValue == "0" && bValue == "255")
+                return "0xFF0FF";
+            //Light Skin
+            if (rValue == "253" && gValue == "198" && bValue == "137")
+                return "0xFDC669";
+            //Brown
+            if (rValue == "117" && gValue == "76" && bValue == "36")
+                return "0x754C24";
+
+            return hexColor;
         }
     }
 }
